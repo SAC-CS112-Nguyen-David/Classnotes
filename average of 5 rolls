@@ -17,10 +17,10 @@ public class Test {
 		}
 
 		sum = (float) total;
-		System.out.print("Total value of 3 rolls: ");
+		System.out.print("Total value of 5 rolls: ");
 		System.out.println(sum);
 		average = (float)total/5f;
-		System.out.print("Average value of 3 rolls: ");
+		System.out.print("Average value of 5 rolls: ");
 		System.out.println(average);
 	}
 
