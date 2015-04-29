@@ -1,0 +1,16 @@
+public class Dice {
+	private int mDicecount;
+
+	public Dice(int mDicecount) {
+		this.mDiceCount = DiceCount; // constructor
+	}
+
+	public int RollDice() {
+		int val = 0;
+		for (int i = 0; i < mDiceCount; i++) {
+			val = val + (int) (Math.random() * mDiceCount * 6) + 1;
+			return (int) (Math.random() * mDiceCount * 6) + 1;
+		}
+		return val;
+	}
+}
