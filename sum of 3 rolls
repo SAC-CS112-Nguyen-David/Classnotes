@@ -1,4 +1,3 @@
-
 public class Test {
 
 	public static void main(String[] args) {
@@ -10,15 +9,14 @@ public class Test {
 
 		for (int rolls = 0; rolls < 3; rolls++) {
 
-		value = (int)(Math.random() * 6 + 1);
-		total += value;
-
-		System.out.println(value);
+			value = (int) (Math.random() * 6 + 1);
+			total += value;
+			System.out.println(value);
 
 		}
 
-		sum = (float)total;
-
+		sum = (float) total;
+		System.out.print("Total value of 3 rolls: ");
 		System.out.println(sum);
 	}
 
