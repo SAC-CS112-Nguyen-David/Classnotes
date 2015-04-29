@@ -1,5 +1,3 @@
-import java.util.Scanner;
-
 public class Test {
 
 	public static void main(String[] args) {
@@ -9,9 +7,6 @@ public class Test {
 		int total = 0;
 		float sum = 0f;
 		float average = 0f;
-		String d;
-
-		do {
 			for (int rolls = 0; rolls < 5; rolls++) {
 
 				value = (int) (Math.random() * 6 + 1);
@@ -26,11 +21,6 @@ public class Test {
 			average = (float) total / 5f;
 			System.out.print("Average value of 5 rolls: ");
 			System.out.println(average);
-			System.out.println("Do you want to play again? (Y/N): ");
-			Scanner input2 = new Scanner(System.in);
-			d = input2.nextLine();
-			d = d.toUpperCase();
-		} while (d.equals("Y"));
-		System.out.println("See ya later");
+		
 	}
 }
