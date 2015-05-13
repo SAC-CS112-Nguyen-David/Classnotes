@@ -80,7 +80,7 @@ private int sum;
 public int ThreeDice();
 
 sum = super.ThreeDice() + super.ThreeDice() + super.ThreeDice();
-return int (sum/3);
+return (int) (sum/3);
 }
 		
 	
