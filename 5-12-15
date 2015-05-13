@@ -1,0 +1,68 @@
+public class ThreeDice {
+
+	//here are 3 dice objects
+	private RollAllDice d1 = new RollAllDice(); 
+	private RollAllDice d2 = new RollAllDice();
+	private RollAllDice d3 = new RollAllDice();
+
+	//here is method throw with the average of 3 dices
+	public int tripleRoll() {
+		int one = d1.roll();
+		int two = d2.roll();
+		int three = d3.roll();
+		int fourth = (one + two + three / 3);
+		return fourth;
+	}
+}
+
+
+
+
+//////////////////////////////////////////////////////////////
+
+public class RollAllDice {
+	private int sides;
+	private int diceValue;
+	private static int history = 0;
+
+	// Constructor of Dice class
+	public RollAllDice() {
+		sides = 6;
+		roll();
+		history++;
+	}
+
+	// roll function
+	public int roll() {
+		diceValue = (int) (Math.random() * sides) + 1;
+		if (diceValue > sides) {
+			diceValue = sides;
+		}
+		return diceValue;
+	}
+
+	// get value of dice
+	public int getDiceValue() {
+		return diceValue;
+	}
+
+	// get number of object is created
+	public static int getHistory() {
+		return history;
+	}
+}
+
+
+/////////////////////////////////////////////////////////////////////
+
+public class Main {
+	// main program that runs the three dice roll and shows the result
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		ThreeDice do_it = new ThreeDice();
+		int result = do_it.tripleRoll();
+		System.out.print("result: " + result);
+	}
+
+}
+
