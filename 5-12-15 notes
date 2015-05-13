@@ -72,3 +72,16 @@ public class Main {
 
 /////////////////////////////////////////////////////////////////////
 
+
+public class Inheritance extends ThreeDice {
+	//@Override annotation
+private int sum;
+
+public int ThreeDice();
+
+sum = super.ThreeDice() + super.ThreeDice() + super.ThreeDice();
+return int (sum/3);
+}
+		
+	
+
