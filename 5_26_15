@@ -1,0 +1,71 @@
+import java.util.Scanner;
+import java.util.Random;
+
+public class Dice implements Runnable {
+
+	public int diceValue;
+
+	public Dice() {
+	}
+
+	public int roll() {
+		diceValue = (int) (Math.random() * 6) + 1;
+		return diceValue;
+	}
+
+	@Override
+	public void run() {
+		roll(); // TODO Auto-generated method stub
+	
+		System.out.println(Thread.currentThread().getName() + "\tDice value: " +diceValue);
+	
+	}
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+///////////////////////////////////////////////////////
+
+
+
+
+
+import java.util.Scanner;
+import java.util.Random;
+		
+public class Main {
+
+	public static void main(String[] args) {
+
+		System.out.println("Start");
+		for (int i = 0; i < 25; i++) {
+		      Runnable T1 = new Dice ();
+		      Thread w1 = new Thread(T1);
+		      // We can set the name of the thread
+		      w1.setName("This is thread #" + i);
+		      // Start the thread, never call method run() direct
+		      w1.start();
+	      
+		}
+	      System.out.println("Complete");
+	      }
+}
+
+
