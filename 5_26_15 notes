@@ -1,3 +1,5 @@
+LAB 1
+
 import java.util.Scanner;
 import java.util.Random;
 
@@ -22,15 +24,6 @@ public class Dice implements Runnable {
 	}
 
 }
-
-
-
-
-
-
-
-
-
 
 
 
@@ -67,5 +60,63 @@ public class Main {
 	      System.out.println("Complete");
 	      }
 }
+
+
+
+
+/////////////////////////////////////////////////////////////////////////////////////////
+
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+
+public class TaskExecutor {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		PrintTask task1 = new PrintTask("thread#1 rolls: ");
+		PrintTask task2 = new PrintTask("thread#2 rolls: ");
+		PrintTask task3 = new PrintTask("thread#3 rolls: ");
+		PrintTask task4 = new PrintTask("thread#4 rolls: ");
+		System.out.println("Start");
+		ExecutorService threadExecutor = Executors.newCachedThreadPool();
+		threadExecutor.execute(task1);
+		threadExecutor.execute(task2);
+		threadExecutor.execute(task3);
+		threadExecutor.execute(task4);
+		threadExecutor.shutdown();
+		System.out.println("Complete");
+	}
+
+}
+
+
+
+//////////////////////////////////////////////////////////////////////////////////////////////////
+LAB 2
+
+import java.util.Random;
+
+public class PrintTask implements Runnable {
+
+	private final int diceValue;
+	private final String taskName;
+	private final static Random generator = new Random();
+
+	public PrintTask(String name) {
+		taskName = name;
+		diceValue = (int) (Math.random() * 6) + 1;
+	}
+
+	@Override
+	public void run() {
+		System.out.printf("%s %s\n", taskName, diceValue);
+
+	}
+}
+
+
+
+
+
 
 
